@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":"AAAAA,QAAQC,IAAI","sources":["webpack://28.02.24/./src/index.js"],"sourcesContent":["console.log(\"Hello ss\")"],"names":["console","log"],"sourceRoot":""}
