@@ -25,6 +25,6 @@ export default activeFunction = (e) => {
     if (BasicAndSauceActiveList.length === 1 || IngredientsActiveList.length === 2) {
         return;
     }
-
+    currentElement.classList.add("active");
 };
 
