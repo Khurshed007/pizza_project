@@ -1,3 +1,6 @@
+
+import toggleUniqueElemnt from "./toggleUniqueElemnt";
+
 export default activeFunction = (e) => {
     // Получаем все li внутри текущего ul
     let currentElement = e.currentTarget;
@@ -26,5 +29,7 @@ export default activeFunction = (e) => {
         return;
     }
     currentElement.classList.add("active");
+
+     toggleUniqueElemnt(e)
 };
 
