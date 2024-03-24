@@ -4,7 +4,6 @@ import {addpositiveMarker,addnegativeMarker} from "./marker.js"
  import modallWindow from './modallwindow.js';
 
 
-btn.setAttribute("disabled",true);
 let handleClick = () => {
   let priceCounter = 0;
   let pizzaCounter = 0;
@@ -23,11 +22,7 @@ let handleClick = () => {
       );
       if (!isDuplicate) {
         // нужен для того чтобы один и тот же элемент дважды не добавлялся
-        //   let liChild = document.createElement("li");
-        //   liChild.className = currentElement.classList.value;
-        //   liChild.setAttribute("data-price", currentElement.dataset.price);
-        //   liChild.setAttribute("data-menu", currentElement.dataset.menu);
-        //   liChild.textContent = currentElement.textContent;
+
         orderShow.append(currentElement.cloneNode(true));
         priceCounter += +currentElement.dataset.price;
         priceShow.innerHTML = priceCounter;
@@ -40,7 +35,7 @@ let handleClick = () => {
               currentElement.dataset.menu
             );
             UniqueMenuList.push(currentElement.dataset.menu);
-            console.log(UniqueMenuList);
+          
             pizzaCounter++;
           }
 
@@ -83,7 +78,7 @@ let handleClick = () => {
                    }
         })
          
-          console.log(isDiscovered, "discovery")
+       
         
         if (
           UniqueMenuIndex !== -1 && !isDiscovered &&
@@ -91,9 +86,7 @@ let handleClick = () => {
         ) {
           // Удаляем элемент из массива по его индексу
           UniqueMenuList.splice(UniqueMenuIndex, 1);
-          console.log("Deleted:", menuAttribute, "from arr");
-          console.log("New arr:", UniqueMenuList);
-          console.log(UniqueMenuIndex);
+   
           showPizza[--pizzaCounter].classList.remove("active");
           btn.disabled = true
           btn.classList.remove("active")

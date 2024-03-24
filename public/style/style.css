@@ -2,21 +2,41 @@
     width: 700px;
     height: 460px;
     margin: 10px;
-    background-color: #B1B1B1;
     padding: 25px 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+
+}
+.up_left_side_content p, .list p {
+	display: inline-block;
+	line-height: 5px;
 }
 
 
+
+.up_left_side_content .image_content{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		
+}
 
 .up_left_side_content h1 {
     display: inline-block;
 }
 
-
+.up_left_side_order_content li.active p{
+	color: #fff;
+	font-size: 20px;
+}
+.up_left_side_order_content li.active button {
+	 margin-left: 10px;
+}
 
 .up_left_side_order_content,
 .price_content {
@@ -32,12 +52,19 @@ body{
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
+
+}
+
+
+.image_content{
+
+	background: linear-gradient(#fddfb9, #eaab90,#b5828a,#885f7e,#2f2a6d);
 }
 *{
 	box-sizing:border-box;
 }
 .active{
-    background-color: red;
+    color: #ea272d;
 }
 ul{
 	list-style:none;}
@@ -154,14 +181,16 @@ a{
 }
 	
 .up_right_side_content .btn {
+	padding: 10px 100px;
 	background-color: grey;
 	position: absolute;
 	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
+	bottom: 10%;
+	transform: translate(-50%,-10%);
 }
 .up_right_side_content .btn.active {
-	background-color: red;
+	background-color: #ea272d;
+	color: #fff;
 }
 
 .image_content{
@@ -174,12 +203,7 @@ a{
 }
 
 
-.pizza_slice{
-    width: 50%;
-    height: 100%;
-    background-color:blueviolet;
-	margin: 6px;
-}
+
 
 .pizza_slice.active {
      display: none;
@@ -199,6 +223,7 @@ a{
     height: 50%;
     width: 100%;
     display: flex;
+	
 
  }
 
@@ -236,7 +261,7 @@ a{
 	justify-content: center;
 	}
 .flavor,.breakfast{
-	width:540px;
+	width:50%;
 	height:180px;
 	margin:10px;
 	background-color:#b1b1b1;}
@@ -422,34 +447,36 @@ a{
 			background-repeat:no-repeat;
 			}
 		.food-one{
-			background-image:url(../images/food-1.png);
+			background-image:url(../images/IMG_1759.webp);
 			background-size:cover;
 			background-repeat:no-repeat;
 			}
 		.food-two{
-			background-image:url(../images/food-2.png);
+			background-image:url(../images/bigeyes.webp);
 			background-size:cover;
 			background-repeat:no-repeat;
 		}
 		.food-three{
-			background-image:url(../images/food-3.png);
+			background-image:url(../images/oldPizza.webp);
 			background-size:cover;
 			background-repeat:no-repeat;
 			}
 			.food-four{
-				background-image:url(../images/food-3.png);
+				background-image:url(../images/sauce.avif);
 				background-size:cover;
 				background-repeat:no-repeat;
 				}
 			
 		.flavor{
-			background-image:url(../images/flavor.png);
+			background-image:url(../images/flavor.jpeg);
 			background-size:cover;
+			background-position: center;
 			background-repeat:no-repeat;
 			}
 		.breakfast{
-			background-image:url(../images/breakfast.png);
+			background-image:url(../images/breakfast.webp);
 			background-size:cover;
+			background-position: center;
 			background-repeat:no-repeat;
 			}
 	
@@ -503,7 +530,7 @@ h1,h2,h3 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.6);
 }
 
 
@@ -513,7 +540,9 @@ li{
 .active{
 	transition: 0.5;
 }
-
+.active p{
+	color: red;
+}
 
 button{
 	padding:3px 10px;
@@ -537,7 +566,7 @@ button:active{
     font-size: 15px;
     color: aqua;
     vertical-align: super;
-    /* font-size: smaller; */
+  
     opacity: 0;
 
     transition: opacity 0.3s ease, transform 0.3s ease; /* Переходы для плавного изменения свойств */
@@ -592,8 +621,12 @@ button:active{
 .pizza_slice {
     width: 50%;
     height: 100%;
-    background-color: blueviolet;
+	background: linear-gradient(#fddfb9, #e6be93,#b5828a,#885f7e,#2f2a6d);
 }
+.pizza_slice_left_side_content .pizza_slice{
+	background: linear-gradient(#2f2a6d, #885f7e,#b5828a,#e6be93,#fddfb9);
+}
+
 
 .pizza_slice.active {
     display: none;
@@ -621,5 +654,46 @@ button:active{
     height: 50%;
     width: 100%;
     display: flex;
+
+}
+
+
+.modall_container{
+	width: 100%;
+	height: 200%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	background-color: red;
+	z-index: 90;
+}
+
+.modall_content{
+	width: 700px;
+	height: 540px;
+	/* background-color: #b5828a; */
+	position: absolute;
+	z-index: 99;
+	transform: translateY(-100%);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 2s;
+
+}
+.modall_content.active{
+	transform: translateY(20%);
+}
+
+.modall_btn{
+	padding:10px 35px;
+}
+
+
+.modall_content .image_content{
+	width: 70%;
+	height: 70%;
 
 }
