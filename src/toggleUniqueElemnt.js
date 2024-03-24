@@ -32,8 +32,10 @@ let handleClick = () => {
           let currentElement = e.currentTarget;
         
   
-          Array.from(options).forEach((li, index) => {
+          Array.from(options).forEach((li) => {
             if (currentElement.textContent === li.textContent) {
+             priceCounter -=  Number(currentElement.dataset.price);
+             PriceShow.innerHTML = priceCounter;
               li.classList.remove("active");
               currentElement.remove();
             }
