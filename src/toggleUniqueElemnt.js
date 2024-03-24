@@ -26,6 +26,23 @@ let handleClick = () => {
       }
     }
 
+
+    Array.from(orderShow.querySelectorAll("li")).forEach((item) => {
+        item.addEventListener("click", (e) => {
+          let currentElement = e.currentTarget;
+        
+  
+          Array.from(options).forEach((li, index) => {
+            if (e.currentTarget.textContent === li.textContent) {
+              li.classList.remove("active");
+              currentElement.remove();
+            }
+          });
+
+  
+          e.stopImmediatePropagation();
+        });
+      });
   };
 };
 
