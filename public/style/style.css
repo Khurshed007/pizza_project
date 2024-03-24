@@ -28,7 +28,7 @@
 body{
 	margin:0px;
 	padding:0px;
-	background-image:url(../images/bg2.png);
+	background-image:url(../images/bg.png);
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
@@ -37,7 +37,7 @@ body{
 	box-sizing:border-box;
 }
 .active{
-    color: red;
+    background-color: red;
 }
 ul{
 	list-style:none;}
@@ -153,6 +153,16 @@ a{
 	margin:10px;
 }
 	
+.up_right_side_content .btn {
+	background-color: grey;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.up_right_side_content .btn.active {
+	background-color: red;
+}
 
 .image_content{
 	width: 100%;

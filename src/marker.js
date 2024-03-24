@@ -1,3 +1,5 @@
+import { priceShow} from './constants.js'
+
 function addMarker(value, isPositive) {
     const newItem = document.createElement("sup");
     newItem.classList.add("marker"); // Добавляем класс для анимации
@@ -7,7 +9,7 @@ function addMarker(value, isPositive) {
       newItem.textContent = `-${value}`;
       newItem.classList.add("minus");
     }
-    PriceShow.appendChild(newItem); // должен стоять до getComputedStyle(newItem).opacity  и newItem.classList.add("show");
+    priceShow.appendChild(newItem); // должен стоять до getComputedStyle(newItem).opacity  и newItem.classList.add("show");
     getComputedStyle(newItem).opacity; // Здесь нам не нужно значение, просто вызываем метод для триггера анимации
   
     // Запускаем анимацию
@@ -16,12 +18,17 @@ function addMarker(value, isPositive) {
       newItem.classList.add("hidden"); // Скрываем наш элемент через опр. время
     }, 450);
   }
-  export function addpositiveMarker(e) {
+ function addpositiveMarker(e) {
     const currentElPrice = e.dataset.price;
     addMarker(currentElPrice, true);
   }
   
-  export function addnegativeMarker(e) {
+function addnegativeMarker(e) {
     const currentElPrice = e.dataset.price;
     addMarker(currentElPrice, false);
+  }
+
+  export {
+    addpositiveMarker,
+    addnegativeMarker
   }
