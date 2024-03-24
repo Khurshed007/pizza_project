@@ -71,11 +71,8 @@ let handleClick = () => {
         });
         // let isDiscovered = false
         let isDiscovered = Array.from(orderShow.querySelectorAll("li")).some((li) => {
-                   if(currentElement.dataset.menu === li.dataset.menu){
-                          return true
-                   }else{
-                     return false
-                   }
+                   return currentElement.dataset.menu === li.dataset.menu
+                       
         })
          
        
