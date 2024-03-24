@@ -1,7 +1,9 @@
 import {priceShow, orderShow} from './constants.js'
 
 let handleClick = () => {
-  let priceCounter = 0;
+    let priceCounter = 0;
+    let pizzaCounter = 0;
+    const UniqueMenuList = [];
   return function (e) {
     let currentElement = e.currentTarget;
 
@@ -24,13 +26,37 @@ let handleClick = () => {
         priceShow.innerHTML = priceCounter;
 
       }
+
+      if (!UniqueMenuList.includes(currentElement.dataset.menu)) {
+        showPizza[pizzaCounter].classList.add("active");
+        showPizza[pizzaCounter].setAttribute(
+          "data-menu",
+          currentElement.dataset.menu
+        );
+        UniqueMenuList.push(currentElement.dataset.menu);
+        console.log(UniqueMenuList);
+        pizzaCounter++;
+      }
+
     }
 
 
     Array.from(orderShow.querySelectorAll("li")).forEach((item) => {
         item.addEventListener("click", (e) => {
           let currentElement = e.currentTarget;
-        
+          let menuAttribute = currentElement.dataset.menu; // Получаем значение атрибута меню текущего элемента
+          let UniqueMenuIndex = UniqueMenuList.indexOf(menuAttribute);
+          if (
+            UniqueMenuIndex !== -1 &&
+            UniqueMenuList.includes(currentElement.dataset.menu)
+          ) {
+            // Удаляем элемент из массива по его индексу
+            UniqueMenuList.splice(UniqueMenuIndex, 1);
+            console.log("Deleted:", menuAttribute, "from arr");
+            console.log("New arr:", UniqueMenuList);
+            console.log(UniqueMenuIndex);
+            showPizza[--pizzaCounter].classList.remove("active");
+          }
   
           Array.from(options).forEach((li) => {
             if (currentElement.textContent === li.textContent) {
