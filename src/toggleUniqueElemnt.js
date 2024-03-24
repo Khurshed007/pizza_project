@@ -1,4 +1,5 @@
 import { priceShow, orderShow, btn } from './constants.js'
+import {addpositiveMarker,addnegativeMarker} from "./marker.js"
 
 let handleClick = () => {
   let priceCounter = 0;
@@ -25,19 +26,22 @@ let handleClick = () => {
         orderShow.append(currentElement.cloneNode(true));
         priceCounter += +currentElement.dataset.price;
         priceShow.innerHTML = priceCounter;
+        addpositiveMarker(currentElement);
+        
+        if (!UniqueMenuList.includes(currentElement.dataset.menu)) {
+            showPizza[pizzaCounter].classList.add("active");
+            showPizza[pizzaCounter].setAttribute(
+              "data-menu",
+              currentElement.dataset.menu
+            );
+            UniqueMenuList.push(currentElement.dataset.menu);
+            console.log(UniqueMenuList);
+            pizzaCounter++;
+          }
 
       }
 
-      if (!UniqueMenuList.includes(currentElement.dataset.menu)) {
-        showPizza[pizzaCounter].classList.add("active");
-        showPizza[pizzaCounter].setAttribute(
-          "data-menu",
-          currentElement.dataset.menu
-        );
-        UniqueMenuList.push(currentElement.dataset.menu);
-        console.log(UniqueMenuList);
-        pizzaCounter++;
-      }
+  
       if (currentElement.classList.contains("active")) {
 
         if (UniqueMenuList.length === showPizza.length) {
@@ -72,6 +76,7 @@ let handleClick = () => {
             PriceShow.innerHTML = priceCounter;
             li.classList.remove("active");
             currentElement.remove();
+            addnegativeMarker(currentElement);
           }
         });
 
