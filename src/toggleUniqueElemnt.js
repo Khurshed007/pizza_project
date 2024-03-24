@@ -1,4 +1,4 @@
-import {priceShow} from './constants.js'
+import {priceShow, orderShow} from './constants.js'
 
 let handleClick = () => {
   let priceCounter = 0;
@@ -33,7 +33,7 @@ let handleClick = () => {
         
   
           Array.from(options).forEach((li, index) => {
-            if (e.currentTarget.textContent === li.textContent) {
+            if (currentElement.textContent === li.textContent) {
               li.classList.remove("active");
               currentElement.remove();
             }
