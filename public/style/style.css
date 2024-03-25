@@ -677,7 +677,7 @@ button:active{
 	/* background-color: #b5828a; */
 	position: absolute;
 	z-index: 99;
-	transform: translateY(-100%);
+	transform: translateY(-110%);
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
