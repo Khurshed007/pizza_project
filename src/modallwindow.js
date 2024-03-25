@@ -1,4 +1,4 @@
-import {modallContent, modallButton} from "./constants.js"
+import {modallContent, modallButton, modallContainer} from "./constants.js"
 
 function modallWindow(pizzaAmount, currentMassive) {
     const areAllPizzaBought = pizzaAmount.length === currentMassive.length;
@@ -11,6 +11,7 @@ function modallWindow(pizzaAmount, currentMassive) {
       });
       
     modallContent.classList.add("active")
+    modallContainer.classList.add("active")
     }
   }
 

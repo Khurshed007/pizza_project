@@ -25,7 +25,7 @@ let handleClick = () => {
 
         orderShow.append(currentElement.cloneNode(true));
         priceCounter += +currentElement.dataset.price;
-        priceShow.innerHTML = priceCounter;
+        priceShow.innerHTML = priceCounter + " $ ";
         addpositiveMarker(currentElement);
         
         if (!UniqueMenuList.includes(currentElement.dataset.menu)) {
@@ -63,7 +63,7 @@ let handleClick = () => {
           if (currentElement.textContent === li.textContent) {
             currentElement.remove();
             priceCounter -= Number(currentElement.dataset.price);
-            priceShow.innerHTML = priceCounter;
+            priceShow.innerHTML = priceCounter +  " $ ";
             li.classList.remove("active");
            
             addnegativeMarker(currentElement);
@@ -98,5 +98,5 @@ let handleClick = () => {
   };
 };
 
-  let toggleUniqueElemnet = handleClick()
+let toggleUniqueElemnet = handleClick()
 export default toggleUniqueElemnet

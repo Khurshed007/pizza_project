@@ -658,15 +658,18 @@ button:active{
 }
 
 
-.modall_container{
+#modall_container.active{
 	width: 100%;
 	height: 200%;
-	position: relative;
+	position: absolute;
+	left: 0;
+	transform: translateY(-10%);
 	display: flex;
 	justify-content: center;
-	background-color: red;
+	background-color: rgba(0,0,0,0.6);
 	z-index: 90;
 }
+
 
 .modall_content{
 	width: 700px;
