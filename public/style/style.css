@@ -507,6 +507,11 @@ a{
 	padding: 0;
 	margin: 0;
 }
+
+.list ul li:hover, .up_left_side_order_content ul li:hover  {
+    cursor: pointer;
+
+}
 .list ul li p {
 	display: inline-block;
 
