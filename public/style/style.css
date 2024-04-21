@@ -574,9 +574,7 @@ button:active{
     font-size: 15px;
     color: aqua;
     vertical-align: super;
-  
     opacity: 0;
-
     transition: opacity 0.3s ease, transform 0.3s ease; /* Переходы для плавного изменения свойств */
   }
   

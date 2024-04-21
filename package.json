@@ -1,9 +1,12 @@
 {
+  "homepage": "https://Khurshed007.github.io/pizza_project/",
   "name": "28.02.24",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "start": "webpack serve --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +16,7 @@
   "devDependencies": {
     "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "^5.6.0",
     "i": "^0.3.7",
     "npm": "^10.5.0",
