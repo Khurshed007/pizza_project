@@ -5,10 +5,10 @@ module.exports = {
   entry: "./src/app.js",
   devtool: "source-map",
   output: {
-  path: path.resolve(__dirname, "build"),
-  filename: "bundle.js",
-  publicPath: '/', // Важно указать правильный publicPath
-},
+    path: path.resolve(__dirname, "build"),
+    filename: "bundle.js",
+    publicPath: './', // Используйте относительный путь
+  },
   plugins: [
     new HtmlWebpackPlugin({
       inject: "body",
@@ -36,7 +36,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"],
+    extensions: [".js"],
   },
   devServer: {
     port: 3002,
