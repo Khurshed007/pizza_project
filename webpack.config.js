@@ -7,7 +7,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
-    publicPath: './', // Используйте относительный путь
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -36,7 +35,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js"],
+    extensions: [".js", ".ts", ".tsx"],
   },
   devServer: {
     port: 3002,
