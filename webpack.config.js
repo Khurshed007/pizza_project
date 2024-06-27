@@ -5,9 +5,10 @@ module.exports = {
   entry: "./src/app.js",
   devtool: "source-map",
   output: {
-    path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
-  },
+  path: path.resolve(__dirname, "build"),
+  filename: "bundle.js",
+  publicPath: '/', // Важно указать правильный publicPath
+},
   plugins: [
     new HtmlWebpackPlugin({
       inject: "body",
